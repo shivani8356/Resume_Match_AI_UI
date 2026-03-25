@@ -60,7 +60,7 @@ function App() {
     formData.append('jd_text', jdText);
 
     try {
-      const response = await fetch('http://localhost:8000/analyze', {
+      const response = await fetch('https://resume-match-ai.onrender.com/analyze', {
         method: 'POST',
         body: formData,
       });
@@ -81,7 +81,7 @@ function App() {
       }, 800); // Artificial delay to let user see the cool loading spinner briefly
     } catch (err) {
       console.error(err);
-      setError(err.message || "Failed to analyze resume. Make sure the API is running at http://localhost:8000");
+      setError(err.message || "Failed to analyze resume. Please try again or check your connection.");
       setStep('upload'); // return to upload on error
     }
   };
